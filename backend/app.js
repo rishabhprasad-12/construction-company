@@ -1,6 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import connectDB from "./config/connectDB.js";
+
+import authRoutes from "./routes/authRoutes.js";
+import errorMiddleware from "./middleware/authMiddleware.js";
 
 dotenv.config();
 
@@ -8,8 +12,15 @@ connectDB();
 
 const app = express();
 
+app.use(cors());
+app.use(express.json());
+
+app.use("/api/auth/", authRoutes);
+
+app.use(errorMiddleware);
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`App is listening on ${PORT}`);
-})
+  console.log(`App is listening on ${PORT}`);
+});
