@@ -23,8 +23,8 @@ export const createProject = async (data) => {
 
 export const updateProject = async (id, data) => {
     const project = await Project.findByIdAndUpdate(id, data, {
-        new: true,
-        runValidation: true,
+      new: true,
+      runValidators: true,
     });
 
     if(!project) {
