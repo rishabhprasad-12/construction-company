@@ -2,7 +2,10 @@ import Service from "../models/Service.js";
 import ApiError from "../utils/ApiError.js";
 
 export const getAllServices = async () => {
-  const services = await Service.find().sort({ createdAt: -1 });
+  const services = await Service.find()
+    .populate("user", "name email phone")
+    .sort({ createdAt: -1 });
+    
   return services;
 };
 

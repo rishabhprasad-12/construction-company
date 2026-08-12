@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { ENQUIRY_STATUS } from "../utils/constants.js";
 
 const enquirySchema = new mongoose.Schema(
   {
