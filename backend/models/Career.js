@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import { EMPLOYMENT_TYPE } from "../utils/constants.js";
+
 
 const careerSchema = new mongoose.Schema(
   {
