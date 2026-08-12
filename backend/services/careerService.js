@@ -8,6 +8,11 @@ export const getAllCareers = async () => {
 
 export const getCareerById = async (id) => {
   const career = await Career.findById(id);
+
+  if (!career) {
+    throw new ApiError(404, "Career not found");
+  }
+  
   return career;
 };
 

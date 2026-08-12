@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoutes.js";
 import projectRoutes from './routes/projectRoutes.js';
 import serviceRoutes from "./routes/serviceRoutes.js";
 import careerRoutes from "./routes/careerRoutes.js";
+import quotationRoutes from "./routes/quotationRoutes.js";
 
 import errorMiddleware from "./middleware/authMiddleware.js";
 
@@ -22,7 +23,8 @@ app.use(express.json());
 app.use("/api/auth/", authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use("/api/services", serviceRoutes);
-app.use("/api/career", careerRoutes)
+app.use("/api/career", careerRoutes);
+app.use("/api/quotations", quotationRoutes);
 
 app.use(errorMiddleware);
 
