@@ -20,7 +20,7 @@ export const PROJECT_TYPE = [
   "Other",
 ];
 
-export default QUOTATION_STATUS = [
+export const QUOTATION_STATUS = [
   "pending",
   "contacted",
   "approved",

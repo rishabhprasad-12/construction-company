@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { PROJECT_CATEGORY } from "../utils/constants.js";
+import { PROJECT_CATEGORY, PROJECT_STATUS } from "../utils/constants.js";
 
 const projectSchema = new mongoose.Schema(
   {
