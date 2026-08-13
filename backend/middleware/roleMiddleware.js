@@ -9,9 +9,9 @@ const authorize = (...roles) => {
     if (!roles.includes(req.user.role)) {
       throw new ApiError(404, "Access denied");
     }
-  };
 
-  next();
+    next();
+  };
 };
 
 export default authorize;

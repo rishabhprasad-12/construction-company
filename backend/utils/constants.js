@@ -27,4 +27,4 @@ export const QUOTATION_STATUS = [
   "rejected",
 ];
 
-export const ENQUIRY_STATUS = ["unread", "read", "replied"];
+export const ENQUIRY_STATUS = ["new", "unread", "read", "replied"];

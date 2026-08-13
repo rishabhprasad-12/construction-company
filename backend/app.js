@@ -10,7 +10,7 @@ import careerRoutes from "./routes/careerRoutes.js";
 import quotationRoutes from "./routes/quotationRoutes.js";
 import enquiryRoutes from "./routes/enquiryRoutes.js";
 
-import errorMiddleware from "./middleware/authMiddleware.js";
+import errorMiddleware from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -29,11 +29,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth/", authRoutes);
-app.use("/api/projects", projectRoutes);
-app.use("/api/services", serviceRoutes);
-app.use("/api/career", careerRoutes);
-app.use("/api/quotations", quotationRoutes);
-app.use("/api/enquiries", enquiryRoutes);
+app.use("/api/auth/projects", projectRoutes);
+app.use("/api/auth/services", serviceRoutes);
+app.use("/api/auth/careers", careerRoutes);
+app.use("/api/auth/quotations", quotationRoutes);
+app.use("/api/auth/enquiries", enquiryRoutes);
 
 app.use(errorMiddleware);
 

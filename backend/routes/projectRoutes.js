@@ -12,7 +12,10 @@ import authorize from "../middleware/roleMiddleware.js";
 
 const router = express.Router();
 
-router.route("/").get(getAllProjects).post(protect, authorize("admin"), createProject);
+router
+  .route("/")
+  .get(getAllProjects)
+  .post(protect, authorize("admin"), createProject);
 router
   .route("/:id")
   .get(getProjectById)

@@ -2,7 +2,7 @@ import Enquiry from "../models/Enquiry.js";
 import ApiError from "../utils/ApiError.js";
 
 export const getAllEnquiries = async () => {
-  return await Enquiry.fin()
+  return await Enquiry.find()
     .populate("user", "name email phone")
     .sort({ ceratedAt: -1 });
 };

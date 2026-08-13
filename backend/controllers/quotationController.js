@@ -26,7 +26,7 @@ export const createQuotation = asyncHandler(async (req, res) => {
 
   res
     .status(201)
-    .json(ApiResponse(201, "Quotation created successfully", quotation));
+    .json(new ApiResponse(201, "Quotation created successfully", quotation));
 });
 
 export const updateQuotation = asyncHandler(async (req, res) => {

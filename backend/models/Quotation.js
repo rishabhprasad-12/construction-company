@@ -41,7 +41,6 @@ const quotationSchema = new mongoose.Schema(
 
     projectDescription: {
       type: String,
-      required: [true, "Project description is required"],
       trim: true,
     },
 

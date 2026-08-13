@@ -6,6 +6,10 @@ import ApiError from "../utils/ApiError.js";
 export const registerUser = async (data) => {
   const { name, email, phone, password } = data;
 
+  if (password.length < 6) {
+    throw new ApiError(408, "Password must be at least 6 characters");
+  }
+
   const existingUser = await User.findOne({ email });
 
   if (existingUser) {
