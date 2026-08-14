@@ -1,11 +1,12 @@
 import React from 'react'
 
-const Home = () => {
+const Projects = () => {
   return (
     <div className="flex min-h-[70vh] items-center justify-center">
-      <h1 className="text-4xl font-bold">Home Page</h1>
+      <h1 className="text-4xl font-bold">Project Page</h1>
     </div>
   );
 }
 
-export default Home
+export default Projects
+Projects
