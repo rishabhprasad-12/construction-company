@@ -1,11 +1,27 @@
-import React from 'react'
+import React from "react";
+import Hero from "../components/home/Hero";
+import ServicesPreview from "../components/home/ServicePreview";
+import FeaturedProjects from "../components/home/FeaturedProjects";
+import WhyChooseUs from "../components/home/WhyChooseUs";
+import WorkProcess from "../components/home/WorkProcess";
+import CTA from "../components/home/CTA";
 
 const Home = () => {
   return (
-    <div className="flex min-h-[70vh] items-center justify-center">
-      <h1 className="text-4xl font-bold">Home Page</h1>
-    </div>
-  );
-}
+    <>
+      <Hero />
 
-export default Home
+      <ServicesPreview />
+
+      <FeaturedProjects />
+
+      <WhyChooseUs />
+
+      <WorkProcess />
+
+      <CTA />
+    </>
+  );
+};
+
+export default Home;

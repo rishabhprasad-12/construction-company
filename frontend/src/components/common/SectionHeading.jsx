@@ -1,7 +1,25 @@
-const SectionHeading = ({ eyebrow, title, description, align = "center" }) => {
+const SectionHeading = ({
+  eyebrow,
+  title,
+  description,
+  align = "center",
+  theme = "light",
+}) => {
   const alignment = {
-    left: "items-starts text-left",
-    right: "items-center text-center",
+    left: "items-start text-left",
+    center: "items-center text-center",
+  };
+
+  const themes = {
+    light: {
+      title: "text-slate-900",
+      description: "text-slate-600",
+    },
+
+    dark: {
+      title: "text-white",
+      description: "text-slate-400",
+    },
   };
 
   return (
@@ -12,12 +30,16 @@ const SectionHeading = ({ eyebrow, title, description, align = "center" }) => {
         </span>
       )}
 
-      <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+      <h2
+        className={`text-3xl font-bold tracking-tight sm:text-4xl ${themes[theme].title}`}
+      >
         {title}
       </h2>
 
       {description && (
-        <p className="mt-4 text-slate-600 text-base leading-7 sm:text-lg">
+        <p
+          className={`mt-4 text-base leading-7 sm:text-lg ${themes[theme].description}`}
+        >
           {description}
         </p>
       )}
