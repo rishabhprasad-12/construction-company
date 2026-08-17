@@ -8,6 +8,8 @@ import About from "../pages/About";
 import Projects from "../pages/Projects";
 import Careers from "../pages/Careers";
 import Contacts from "../pages/Contacts";
+import ProjectDetails from "../pages/ProjectDetails";
+import Quote from "../pages/Quote";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -32,12 +34,20 @@ const AppRoutes = () => {
           element: <Projects />
         },
         {
+          path: "projects/:id",
+          element: <ProjectDetails />
+        },
+        {
           path: "careers",
           element: <Careers />,
         },
         {
           path: "contacts",
           element: <Contacts />
+        },
+        {
+          path: "quote",
+          element: <Quote />
         }
       ]
     }
