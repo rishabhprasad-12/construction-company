@@ -32,7 +32,7 @@ app.use("/api/auth/", authRoutes);
 app.use("/api/auth/projects", projectRoutes);
 app.use("/api/auth/services", serviceRoutes);
 app.use("/api/auth/careers", careerRoutes);
-app.use("/api/auth/quotations", quotationRoutes);
+app.use("/api/auth/quotes", quotationRoutes);
 app.use("/api/auth/enquiries", enquiryRoutes);
 
 app.use(errorMiddleware);

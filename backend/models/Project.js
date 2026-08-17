@@ -48,7 +48,7 @@ const projectSchema = new mongoose.Schema(
         trim: true,
       },
     ],
-    features: {
+    featured: {
       type: Boolean,
       default: false,
     },

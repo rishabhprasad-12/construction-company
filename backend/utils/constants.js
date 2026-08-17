@@ -20,6 +20,14 @@ export const PROJECT_TYPE = [
   "Other",
 ];
 
+export const ESTIMATED_BUDGET = [
+  "Under ₹5 Lakhs",
+  "₹5 - ₹10 Lakhs",
+  "₹10 - ₹25 Lakhs",
+  "₹25 - ₹50 Lakhs",
+  "Above ₹50 Lakhs",
+];
+
 export const QUOTATION_STATUS = [
   "pending",
   "contacted",

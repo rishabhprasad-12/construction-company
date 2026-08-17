@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
-import { PROJECT_TYPE, QUOTATION_STATUS } from "../utils/constants.js";
+import {
+  PROJECT_TYPE,
+  QUOTATION_STATUS,
+  ESTIMATED_BUDGET,
+} from "../utils/constants.js";
 
 const quotationSchema = new mongoose.Schema(
   {
@@ -41,6 +45,7 @@ const quotationSchema = new mongoose.Schema(
 
     projectDescription: {
       type: String,
+      required: [true, "Project description is required"],
       trim: true,
     },
 
@@ -51,8 +56,9 @@ const quotationSchema = new mongoose.Schema(
     },
 
     estimatedBudget: {
-      type: Number,
-      min: [0, "Budget cannot be negative"],
+      type: String,
+      enum: ESTIMATED_BUDGET,
+      trim: true,
     },
 
     preferredStartDate: {

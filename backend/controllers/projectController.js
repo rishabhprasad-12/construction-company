@@ -4,7 +4,11 @@ import asyncHandler from "../middleware/asyncHandler.js";
 import ApiResponse from "../utils/ApiResponse.js";
 
 export const getAllProjects = asyncHandler(async (req, res) => {
-  const projects = await projectService.getAllProjects();
+  const isFeatured = req.query.featured;
+
+  const projects = await projectService.getAllProjects({
+    featured: isFeatured,
+  });
 
   res
     .status(200)
