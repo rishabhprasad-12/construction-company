@@ -10,6 +10,7 @@ import Careers from "../pages/Careers";
 import Contacts from "../pages/Contacts";
 import ProjectDetails from "../pages/ProjectDetails";
 import Quote from "../pages/Quote";
+import ServiceDetails from "../pages/ServiceDetails";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -28,6 +29,10 @@ const AppRoutes = () => {
         {
           path: "services",
           element: <Services />
+        },
+        {
+          path: "services/:id",
+          element: <ServiceDetails />
         },
         {
           path: "projects",

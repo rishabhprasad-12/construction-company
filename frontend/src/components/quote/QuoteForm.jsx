@@ -13,7 +13,7 @@ const initialFormData = {
   projectDescription: "",
 };
 
-const QuoteForm = ({ projectId, projectTitle }) => {
+const QuoteForm = ({ serviceTitle, projectTitle }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
@@ -167,13 +167,13 @@ const QuoteForm = ({ projectId, projectTitle }) => {
       className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8"
     >
       {/* Selected project */}
-      {projectTitle && (
+      {(serviceTitle || projectTitle) && (
         <div className="mb-7 rounded-xl border border-amber-200 bg-amber-50 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-600">
             Interested in
           </p>
 
-          <p className="mt-1 font-semibold text-slate-900">{projectTitle}</p>
+          <p className="mt-1 font-semibold text-slate-900">{serviceTitle || projectTitle}</p>
         </div>
       )}
 

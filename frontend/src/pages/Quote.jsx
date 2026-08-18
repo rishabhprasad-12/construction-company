@@ -7,7 +7,7 @@ import QuoteForm from "../components/quote/QuoteForm";
 const Quote = () => {
   const location = useLocation();
 
-  const projectId = location.state?.projectId || "";
+  const serviceTitle = location.state?.serviceTitle || "";
   const projectTitle = location.state?.projectTitle || "";
 
   return (
@@ -62,7 +62,7 @@ const Quote = () => {
           </div>
 
           {/* Form */}
-          <QuoteForm projectId={projectId} projectTitle={projectTitle} />
+          <QuoteForm serviceTitle={serviceTitle} projectTitle={projectTitle} />
         </div>
       </section>
     </main>
