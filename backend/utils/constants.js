@@ -9,7 +9,12 @@ export const PROJECT_CATEGORY = [
 
 export const PROJECT_STATUS = ["ongoing", "completed"];
 
-export const EMPLOYMENT_TYPE = ["Full-Time", "Part-Time", "Contract", "Internship"]
+export const EMPLOYMENT_TYPE = [
+  "Full-Time",
+  "Part-Time",
+  "Contract",
+  "Internship",
+];
 
 export const PROJECT_TYPE = [
   "Residential",
@@ -36,3 +41,11 @@ export const QUOTATION_STATUS = [
 ];
 
 export const ENQUIRY_STATUS = ["new", "unread", "read", "replied"];
+
+export const APPLICATION_STATUS = [
+  "pending",
+  "reviewing",
+  "shortlisted",
+  "rejected",
+  "hired",
+];

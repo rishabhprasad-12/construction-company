@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import serviceRoutes from "./routes/serviceRoutes.js";
 import careerRoutes from "./routes/careerRoutes.js";
+import jobApplicationRoutes from "./routes/jobApplicationRoutes.js";
 import quotationRoutes from "./routes/quotationRoutes.js";
 import enquiryRoutes from "./routes/enquiryRoutes.js";
 
@@ -32,6 +33,7 @@ app.use("/api/auth/", authRoutes);
 app.use("/api/auth/projects", projectRoutes);
 app.use("/api/auth/services", serviceRoutes);
 app.use("/api/auth/careers", careerRoutes);
+app.use("/api/auth/applications", jobApplicationRoutes);
 app.use("/api/auth/quotes", quotationRoutes);
 app.use("/api/auth/enquiries", enquiryRoutes);
 

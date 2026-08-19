@@ -2,7 +2,7 @@ import Career from "../models/Career.js";
 import ApiError from "../utils/ApiError.js";
 
 export const getAllCareers = async () => {
-  const careers = await Career.find().sort({ createdAt: -1 });
+  const careers = await Career.find({ isActive: true }).sort({ createdAt: -1 });
   return careers;
 };
 
@@ -12,7 +12,7 @@ export const getCareerById = async (id) => {
   if (!career) {
     throw new ApiError(404, "Career not found");
   }
-  
+
   return career;
 };
 
