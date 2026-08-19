@@ -11,6 +11,8 @@ import Contacts from "../pages/Contacts";
 import ProjectDetails from "../pages/ProjectDetails";
 import Quote from "../pages/Quote";
 import ServiceDetails from "../pages/ServiceDetails";
+import CareerDetails from "../pages/CareerDetails";
+import JobApplication from "../pages/JobApplication";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -45,6 +47,14 @@ const AppRoutes = () => {
         {
           path: "careers",
           element: <Careers />,
+        },
+        {
+           path: "/careers/:id",
+          element: <CareerDetails />
+        },
+        {
+          path: "/careers/:id/apply",
+          element: <JobApplication />
         },
         {
           path: "contacts",
