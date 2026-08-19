@@ -14,6 +14,9 @@ import ServiceDetails from "../pages/ServiceDetails";
 import CareerDetails from "../pages/CareerDetails";
 import JobApplication from "../pages/JobApplication";
 
+import Register from "../pages/auth/Register";
+import Login from "../pages/auth/Login";
+
 const AppRoutes = () => {
   const routes = useRoutes([
     {
@@ -65,6 +68,14 @@ const AppRoutes = () => {
           element: <Quote />
         }
       ]
+    },
+    {
+      path: "/auth/login",
+      element: <Login />
+    },
+    {
+      path: "/auth/register",
+      element: <Register />
     }
   ]);
 
