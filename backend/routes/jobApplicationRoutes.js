@@ -6,26 +6,31 @@ import {
   getApplicationById,
   updateApplicationStatus,
   deleteApplication,
+  getMyApplications,
 } from "../controllers/jobApplicationController.js";
 
 import upload from "../middleware/multerMiddleware.js";
-import authMiddleware from "../middleware/authMiddleware.js";
-import roleMiddleware from "../middleware/roleMiddleware.js";
+import protect from "../middleware/authMiddleware.js";
+import authorize from "../middleware/roleMiddleware.js";
 
 const router = express.Router();
 
 router
   .route("/")
-  .get(authMiddleware, roleMiddleware("admin"), getAllApplications)
-  .post(upload.single("resume"), createApplication);
+  .get(protect, authorize("admin"), getAllApplications)
+  .post(protect, upload.single("resume"), createApplication);
+
+router
+  .route("/my-applications")
+  .get(protect, authorize("customer"), getMyApplications);
 
 router
   .route("/:id")
-  .get(authMiddleware, roleMiddleware("admin"), getApplicationById)
-  .delete(authMiddleware, roleMiddleware("admin"), deleteApplication);
+  .get(protect, authorize("admin"), getApplicationById)
+  .delete(protect, authorize("admin"), deleteApplication);
 
 router
   .route("/:id/status")
-  .patch(authMiddleware, roleMiddleware("admin"), updateApplicationStatus);
+  .patch(protect, authorize("admin"), updateApplicationStatus);
 
 export default router;

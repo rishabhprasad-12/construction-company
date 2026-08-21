@@ -7,6 +7,16 @@ export const getAllApplications = async () => {
     .populate("career", "title department location employmentType")
     .populate("user", "name email")
     .sort({ createdAt: -1 });
+
+  return applications;
+};
+
+export const getMyApplications = async (userId) => {
+  const applications = await JobApplication.find({ user: userId })
+    .populate("career", "title department location employmentType")
+    .populate("user", "name email")
+    .sort({ createdAt: -1 });
+
   return applications;
 };
 

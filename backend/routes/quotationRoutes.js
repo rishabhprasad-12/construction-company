@@ -3,6 +3,7 @@ import {
   createQuotation,
   deleteQuotation,
   getAllQuotations,
+  getMyQuotations,
   getQuotationById,
   updateQuotation,
 } from "../controllers/quotationController.js";
@@ -15,7 +16,12 @@ const router = express.Router();
 router
   .route("/")
   .get(protect, authorize("admin"), getAllQuotations)
-  .post(createQuotation);
+  .post(protect, createQuotation);
+
+router
+  .route("/my-quotations")
+  .get(protect, authorize("customer"), getMyQuotations);
+  
 router
   .route("/:id")
   .get(protect, authorize("admin"), getQuotationById)

@@ -11,6 +11,14 @@ export const getAllQuotations = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, "Quotations fetched successfully", quotations));
 });
 
+export const getMyQuotations = asyncHandler(async (req, res) => {
+  const quotations = await quotationService.getMyQuotations( req.user._id );
+
+  res
+    .status(200)
+    .json(new ApiResponse(200, "Quotation fetched successfully", quotations));
+});
+
 export const getQuotationById = asyncHandler(async (req, res) => {
   const quotation = await quotationService.getQuotationById(req.params.id);
 

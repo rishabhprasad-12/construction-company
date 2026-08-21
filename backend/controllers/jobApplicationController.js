@@ -1,7 +1,7 @@
 import asyncHandler from "../middleware/asyncHandler.js";
 import * as jobApplicationService from "../services/jobApplicationService.js";
 import ApiError from "../utils/ApiError.js";
-import APiResponse from "../utils/ApiResponse.js";
+import ApiResponse from "../utils/ApiResponse.js";
 
 export const createApplication = asyncHandler(async (req, res) => {
   if (!req.file) {
@@ -23,13 +23,33 @@ export const createApplication = asyncHandler(async (req, res) => {
   const application =
     await jobApplicationService.createApplication(applicationData);
 
-  res.status(201).json(201, "Application submitted successfully", application);
+  res
+    .status(201)
+    .json(
+      new ApiResponse(201, "Application submitted successfully", application),
+    );
 });
 
 export const getAllApplications = asyncHandler(async (req, res) => {
   const applications = await jobApplicationService.getAllApplications();
 
-  res.status(200).json(200, "Applications fetched successfully", applications);
+  res
+    .status(200)
+    .json(
+      new ApiResponse(200, "Applications fetched successfully", applications),
+    );
+});
+
+export const getMyApplications = asyncHandler(async (req, res) => {
+  const applications = await jobApplicationService.getMyApplications(
+    req.user._id,
+  );
+
+  res
+    .status(200)
+    .json(
+      new ApiResponse(200, "Applications fetched successfully", applications),
+    );
 });
 
 export const getApplicationById = asyncHandler(async (req, res) => {
@@ -37,7 +57,11 @@ export const getApplicationById = asyncHandler(async (req, res) => {
     req.params.id,
   );
 
-  res.status(200).json(200, "Application fetched successfully");
+  res
+    .status(200)
+    .json(
+      new ApiResponse(200, "Application fetched successfully", application),
+    );
 });
 
 export const updateApplicationStatus = asyncHandler(async (req, res) => {
@@ -46,11 +70,21 @@ export const updateApplicationStatus = asyncHandler(async (req, res) => {
     req.body.status,
   );
 
-  res.status(200).json(200, "Application status updated successfully");
+  res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        "Application status updated successfully",
+        application,
+      ),
+    );
 });
 
 export const deleteApplication = asyncHandler(async (req, res) => {
   await jobApplicationService.deleteApplication(req.params.id);
 
-  res.status(200).json(200, "Application deleted successfully");
+  res
+    .status(200)
+    .json(new ApiResponse(200, "Application deleted successfully"));
 });

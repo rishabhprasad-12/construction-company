@@ -6,6 +6,14 @@ export const getAllQuotations = async () => {
   return quotations;
 };
 
+export const getMyQuotations = async (userId) => {
+  const quotation = await Quotation.find({ user: userId }).sort({
+    createdAt: -1,
+  });
+  
+  return quotation;
+};
+
 export const getQuotationById = async (id) => {
   const quotation = await Quotation.findById(id);
 
@@ -47,4 +55,3 @@ export const deleteQuotation = async (id) => {
 
   return quotation;
 };
-
