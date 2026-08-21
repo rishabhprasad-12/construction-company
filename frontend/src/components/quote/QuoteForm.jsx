@@ -2,18 +2,21 @@ import { useState } from "react";
 import { Send } from "lucide-react";
 
 import { createQuote } from "../../services/quoteService";
-
-const initialFormData = {
-  name: "",
-  email: "",
-  phone: "",
-  projectType: "",
-  location: "",
-  estimatedBudget: "",
-  projectDescription: "",
-};
+import { useAuth } from "../../context/AuthContext";
 
 const QuoteForm = ({ serviceTitle, projectTitle }) => {
+  const {user} = useAuth();
+
+  const initialFormData = {
+    name: user?.name || "",
+    email: user?.email || "",
+    phone: user?.phone || "",
+    projectType: "",
+    location: "",
+    estimatedBudget: "",
+    projectDescription: "",
+  };
+
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);

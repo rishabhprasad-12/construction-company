@@ -3,9 +3,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const CarouselArrow = ({ direction, onClick, disabled }) => {
   const isPrevious = direction === "previous";
 
-  console.log(direction);
-  console.log(isPrevious);
-
   return (
     <button
       type="button"

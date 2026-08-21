@@ -4,17 +4,19 @@ import { ArrowLeft, CheckCircle2, FileText, Upload } from "lucide-react";
 
 import { getCareerById } from "../services/careerService";
 import { createJobApplication } from "../services/jobApplicationService";
+import { useAuth } from "../context/AuthContext";
 
 const JobApplication = () => {
   const { id } = useParams();
+  const { user } = useAuth();
 
   const [career, setCareer] = useState(null);
   const [loadingCareer, setLoadingCareer] = useState(true);
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    name: user?.name || "",
+    email: user?.email || "",
+    phone: user?.phone || "",
     coverLetter: "",
     resume: null,
   });

@@ -9,3 +9,9 @@ export const createJobApplication = async (formData) => {
 
     return response.data;
 }
+
+export const getMyApplications = async () => {
+    const response = await api.get("/auth/applications/my-applications");
+    return response.data;
+}
+
