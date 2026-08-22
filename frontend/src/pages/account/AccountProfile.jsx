@@ -97,6 +97,13 @@ const AccountProfile = () => {
           </div>
         </div>
 
+        {/* Error */}
+        {error && (
+          <div className="mt-6 rounded-xl border border-red-200 bg-red-50 p-4">
+            <p className="text-sm text-red-600">{error}</p>
+          </div>
+        )}
+
         <form
           onSubmit={handleSubmit}
           className="mt-8 grid gap-5 sm:grid-cols-2"

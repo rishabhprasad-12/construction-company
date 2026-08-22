@@ -3,6 +3,7 @@ import CustomerLayout from "../layouts/CustomerLayout";
 
 import CustomerDashboard from "../pages/account/CustomerDashboard";
 import AccountProfile from "../pages/account/AccountProfile";
+import MyQuotations from "../pages/account/MyQuotations";
 
 const customerRoutes = [
   {
@@ -19,8 +20,12 @@ const customerRoutes = [
       },
       {
         path: "profile",
-        element: <AccountProfile />
-      }
+        element: <AccountProfile />,
+      },
+      {
+        path: "quotations",
+        element: <MyQuotations />,
+      },
     ],
   },
 ];
