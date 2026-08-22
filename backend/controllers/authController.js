@@ -1,6 +1,5 @@
 import * as authService from "../services/authService.js";
 import asyncHandler from "../middleware/asyncHandler.js";
-import User from "../models/User.js";
 import ApiResponse from "../utils/ApiResponse.js";
 
 export const register = asyncHandler(async (req, res) => {
@@ -24,3 +23,9 @@ export const getProfile = asyncHandler(async (req, res) => {
 
   res.status(200).json(new ApiResponse(200, "User fetched successfully", user));
 });
+
+export const updateProfile = asyncHandler(async (req, res) => {
+  const user = await authService.updateProfile(req.user._id, req.body);
+
+  res.status(200).json(new ApiResponse(200, "User updated successfully", user));
+})

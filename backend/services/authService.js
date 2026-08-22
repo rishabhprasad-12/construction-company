@@ -80,3 +80,16 @@ export const getProfile = async (userId) => {
 
   return user;
 };
+
+export const updateProfile = async (userId, userData) => {
+  const user = await User.findByIdAndUpdate(userId, userData, {
+    new: true,
+    runValidators: true,
+  });
+
+  if (!user) {
+    throw new ApiError(404, "User not found");
+  }
+
+  return user;
+};
