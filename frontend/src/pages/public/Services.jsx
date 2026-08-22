@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 
-import SectionHeading from "../components/common/SectionHeading";
-import ServiceCard from "../components/home/ServiceCard";
-import { getServices } from "../services/serviceService";
+import SectionHeading from "../../components/common/SectionHeading";
+import ServiceCard from "../../components/home/ServiceCard";
+import { getServices } from "../../services/serviceService";
 
 const Services = () => {
   const [services, setServices] = useState([]);

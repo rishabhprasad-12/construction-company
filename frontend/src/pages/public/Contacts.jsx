@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 
-import { createEnquiry } from "../services/enquiryService";
+import { createEnquiry } from "../../services/enquiryService";
 
 const initialFormData = {
   name: "",

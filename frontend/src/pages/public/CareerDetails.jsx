@@ -9,7 +9,7 @@ import {
   MapPin,
 } from "lucide-react";
 
-import { getCareerById } from "../services/careerService";
+import { getCareerById } from "../../services/careerService";
 
 const CareerDetails = () => {
   const { id } = useParams();

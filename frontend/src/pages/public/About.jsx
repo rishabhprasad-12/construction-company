@@ -10,7 +10,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-import SectionHeading from "../components/common/SectionHeading"
+import SectionHeading from "../../components/common/SectionHeading"
 
 const About = () => {
   const values = [

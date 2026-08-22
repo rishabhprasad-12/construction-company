@@ -9,8 +9,6 @@ import { getServices } from "../../services/serviceService";
 
 import CardCarousel from "../common/CardCarousel";
 
-import axios from "axios";
-
 const ServicesPreview = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);

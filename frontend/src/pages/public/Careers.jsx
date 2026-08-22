@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { BriefcaseBusiness, MapPin, Search } from "lucide-react";
 
-import { getCareers } from "../services/careerService";
-import CareerCard from "../components/careers/CareerCard";
+import { getCareers } from "../../services/careerService";
+import CareerCard from "../../components/careers/CareerCard";
 
 const Careers = () => {
   const [careers, setCareers] = useState([]);

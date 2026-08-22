@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, CheckCircle2, FileText, Upload } from "lucide-react";
 
-import { getCareerById } from "../services/careerService";
-import { createJobApplication } from "../services/jobApplicationService";
-import { useAuth } from "../context/AuthContext";
+import { getCareerById } from "../../services/careerService";
+import { createJobApplication } from "../../services/jobApplicationService";
+import { useAuth } from "../../context/AuthContext";
 
 const JobApplication = () => {
   const { id } = useParams();

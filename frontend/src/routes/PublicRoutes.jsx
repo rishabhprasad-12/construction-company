@@ -1,16 +1,16 @@
 import MainLayout from "../layouts/MainLayout";
 
-import Home from "../pages/Home";
-import Services from "../pages/Services";
-import About from "../pages/About";
-import Projects from "../pages/Projects";
-import Careers from "../pages/Careers";
-import Contacts from "../pages/Contacts";
-import ProjectDetails from "../pages/ProjectDetails";
-import Quote from "../pages/Quote";
-import ServiceDetails from "../pages/ServiceDetails";
-import CareerDetails from "../pages/CareerDetails";
-import JobApplication from "../pages/JobApplication";
+import Home from "../pages/public/Home";
+import Services from "../pages/public/Services";
+import About from "../pages/public/About";
+import Projects from "../pages/public/Projects";
+import Careers from "../pages/public/Careers";
+import Contacts from "../pages/public/Contacts";
+import ProjectDetails from "../pages/public/ProjectDetails";
+import Quote from "../pages/public/Quote";
+import ServiceDetails from "../pages/public/ServiceDetails";
+import CareerDetails from "../pages/public/CareerDetails";
+import JobApplication from "../pages/public/JobApplication";
 
 import Register from "../pages/auth/Register";
 import Login from "../pages/auth/Login";

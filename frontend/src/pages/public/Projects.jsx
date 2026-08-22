@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import SectionHeading from "../components/common/SectionHeading";
-import ProjectCard from "../components/home/ProjectCard";
-import { getProjects } from "../services/projectService";
+import SectionHeading from "../../components/common/SectionHeading";
+import ProjectCard from "../../components/home/ProjectCard";
+import { getProjects } from "../../services/projectService";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);

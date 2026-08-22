@@ -1,4 +1,10 @@
-import { FileText, BriefcaseBusiness, Clock3, ArrowRight } from "lucide-react";
+import {
+  FileText,
+  BriefcaseBusiness,
+  Clock3,
+  ArrowRight,
+  Loader2,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -44,6 +50,8 @@ const CustomerDashboard = () => {
     (quote) => quote.status === "pending",
   ).length;
 
+  const totalApplications = applications.length;
+
   // Temporary data — replace with API data later
   const stats = [
     {
@@ -60,7 +68,7 @@ const CustomerDashboard = () => {
     },
     {
       title: "Job Applications",
-      value: 0,
+      value: totalApplications,
       icon: BriefcaseBusiness,
       description: "Applications you have submitted",
     },
@@ -81,6 +89,21 @@ const CustomerDashboard = () => {
           one place.
         </p>
       </section>
+
+      {/* Loading */}
+      {loading && (
+        <div className="mt-6 flex items-center justify-center gap-2 text-sm text-slate-500">
+          <Loader2 size={16} className="animate-spin" />
+          Loading Dashboard...
+        </div>
+      )}
+
+      {/* Error */}
+      {error && (
+        <div className="mt-6 rounded-xl border border-red-200 bg-red-50 p-4">
+          <p className="text-sm">{error}</p>
+        </div>
+      )}
 
       {/* Statistics */}
       <section className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

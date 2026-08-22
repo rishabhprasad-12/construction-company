@@ -2,6 +2,7 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import CustomerLayout from "../layouts/CustomerLayout";
 
 import CustomerDashboard from "../pages/account/CustomerDashboard";
+import AccountProfile from "../pages/account/AccountProfile";
 
 const customerRoutes = [
   {
@@ -16,6 +17,10 @@ const customerRoutes = [
         index: true,
         element: <CustomerDashboard />,
       },
+      {
+        path: "profile",
+        element: <AccountProfile />
+      }
     ],
   },
 ];

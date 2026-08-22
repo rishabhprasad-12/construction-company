@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Calendar, MapPin, User } from "lucide-react";
 
-import { getProjectById } from "../services/projectService";
+import { getProjectById } from "../../services/projectService";
 
 const ProjectDetails = () => {
   const { id } = useParams();

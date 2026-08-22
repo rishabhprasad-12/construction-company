@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 
-import { getServicesById } from "../services/serviceService";
+import { getServicesById } from "../../services/serviceService";
 
 const ServiceDetails = () => {
   const { id } = useParams();

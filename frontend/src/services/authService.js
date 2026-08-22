@@ -17,3 +17,9 @@ export const getProfile = async () => {
 
   return response.data;
 };
+
+export const updateProfile = async (id, formData) => {
+  const response = await api.put(`/auth/profile/${id}`, formData);
+
+  return response.data;
+}

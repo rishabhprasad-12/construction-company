@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { CheckCircle2, ClipboardList, MessageSquare } from "lucide-react";
 
-import SectionHeading from "../components/common/SectionHeading";
-import QuoteForm from "../components/quote/QuoteForm";
+import SectionHeading from "../../components/common/SectionHeading";
+import QuoteForm from "../../components/quote/QuoteForm";
 
 const Quote = () => {
   const location = useLocation();
